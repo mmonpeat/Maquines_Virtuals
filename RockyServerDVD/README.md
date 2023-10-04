@@ -10,9 +10,11 @@ IP: 192.168.1.xxx
 MAQUINA VIRTUAL Rocky Linux 9.2 (25/05/2023)
 *******************************
 user: root
+
 pass: 123456789
 
 user: maria
+
 pass: 123456789
 
 Cero un Usuari(per usar winSCP, no caldria activar passwd):
