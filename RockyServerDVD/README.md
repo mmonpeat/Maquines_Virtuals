@@ -307,4 +307,4 @@ $ sudo firewall-cmd --reload
 
 Set Up WordPress from a Browser
 *******************************
-http://192.168.1.106
+http://192.168.1.xxx
