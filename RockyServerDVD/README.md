@@ -2,6 +2,7 @@
 
 https://www.youtube.com/watch?v=sG-WNFR8z90
 
+
 ## Configurar Rocky per installar WordPress
 
 IP: 192.168.1.xxx
