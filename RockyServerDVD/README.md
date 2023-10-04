@@ -1,6 +1,8 @@
 ## Link de com installar RockyServerDVD
 
 https://www.youtube.com/watch?v=sG-WNFR8z90
+![pro-LwmxAcmB](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/3c321bdc-2350-4851-a9ab-bcb5d49e6642)
+![20231003_185007](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/7e54b701-99df-4b12-9e67-6031bdbc174d)
 
 
 ## Configurar Rocky per installar WordPress
@@ -8,6 +10,7 @@ https://www.youtube.com/watch?v=sG-WNFR8z90
 IP: 192.168.1.xxx
 
 MAQUINA VIRTUAL Rocky Linux 9.2 (25/05/2023)
+
 *******************************
 user: root
 
