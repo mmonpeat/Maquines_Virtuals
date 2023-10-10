@@ -2,17 +2,29 @@
 
 maria.php
 *********
+
 <?php
+
 /**
+
  * @package MariaPlugin
+ 
  *
+ 
  */
+
 /*
+
 Plugin Name: Maria Plugin
+
 Description: holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
 Version: 1.0.0
+
 Author: Maria
+
 License: GPLv2 later
+
 Text Domain: maria-plugin
  */
 
