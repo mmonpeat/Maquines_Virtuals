@@ -1,19 +1,26 @@
 
+Tutorial per crear plugins en WordPress: 
+https://www.youtube.com/watch?v=Z7QfH-s-15s&t=288s
+
+
+Per instal·lar phpMyAdmin: 
+https://www.golinuxcloud.com/install-phpmyadmin-rocky-linux-9/
+
 
 maria.php
 *********
 
 <?php
 
-/**
-
+/ * *
+ 
  * @package MariaPlugin
  
  *
  
- */
+ * /
 
-/*
+/ *
 
 Plugin Name: Maria Plugin
 
@@ -26,15 +33,19 @@ Author: Maria
 License: GPLv2 later
 
 Text Domain: maria-plugin
- */
+
+* /
 
 defined( 'ABSPATH' ) or die( 'Hey, bitch' );
 
+
 class MariaPlugin
 {
+        
         function __construct() {
                 add_action( 'init', array( $this, 'custom_post_type' ) );
         }
+
         function activate() {
                 $this->custom_post_type();//crida un metode dins d'un altre metode
                 flush_rewrite_rules();
@@ -60,3 +71,4 @@ register_activation_hook( __FILE__, array( $mariaplugin, 'activate' ) );
 register_deactivation_hook( __FILE__, array( $mariaplugin, 'deactivation' ) );
 
 ?>
+
