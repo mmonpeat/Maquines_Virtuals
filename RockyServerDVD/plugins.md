@@ -10,42 +10,31 @@ https://www.golinuxcloud.com/install-phpmyadmin-rocky-linux-9/
 maria.php
 *********
 
+```
 <?php
 
-/ * *
- 
+/**
  * @package MariaPlugin
- 
  *
- 
- * /
+ */
 
-/ *
-
+/*
 Plugin Name: Maria Plugin
-
 Description: holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-
 Version: 1.0.0
-
 Author: Maria
-
 License: GPLv2 later
-
 Text Domain: maria-plugin
-
-* /
+*/
 
 defined( 'ABSPATH' ) or die( 'Hey, bitch' );
 
 
 class MariaPlugin
 {
-        
         function __construct() {
                 add_action( 'init', array( $this, 'custom_post_type' ) );
         }
-
         function activate() {
                 $this->custom_post_type();//crida un metode dins d'un altre metode
                 flush_rewrite_rules();
@@ -71,4 +60,4 @@ register_activation_hook( __FILE__, array( $mariaplugin, 'activate' ) );
 register_deactivation_hook( __FILE__, array( $mariaplugin, 'deactivation' ) );
 
 ?>
-
+´´´
