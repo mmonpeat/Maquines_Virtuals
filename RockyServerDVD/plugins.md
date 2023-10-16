@@ -1,6 +1,6 @@
 
 Tutorial per crear plugins en WordPress: 
-https://www.youtube.com/watch?v=Z7QfH-s-15s&t=288s
+[https://www.youtube.com/watch?v=Z7QfH-s-15s&t=288s](https://youtu.be/yGvSVK6CFPk)
 
 
 Per instal·lar phpMyAdmin: 
