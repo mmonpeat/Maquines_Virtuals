@@ -1,7 +1,6 @@
 
 Tutorial per crear plugins en WordPress: 
-[[https://www.youtube.com/watch?v=Z7QfH-s-15s&t=288s](https://youtu.be/yGvSVK6CFPk)](https://www.youtube.com/watch?v=0l7JTie_6jM&list=PLriKzYyLb28kR_CPMz8uierDWC2y3znI2)
-
+https://www.youtube.com/playlist?list=PLriKzYyLb28kR_CPMz8uierDWC2y3znI2
 
 Per instal·lar phpMyAdmin: 
 https://www.golinuxcloud.com/install-phpmyadmin-rocky-linux-9/
