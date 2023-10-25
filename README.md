@@ -14,6 +14,8 @@ entrar a la carpeta magnolia:
 
 www.magnolia-cms.com
 
+docs:   
+https://docs.magnolia-cms.com/welcome/index.html
 
 APP LAUNCHER
 
