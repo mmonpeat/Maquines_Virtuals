@@ -75,3 +75,10 @@ aqui la foto pisarra
 
 detile sub-app
 ![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/b273b12a-9681-4bd7-bdfb-0f40974a985c)
+
+
+CREATE MODULE
+
+cd C:\Users\root\Desktop\magnolia_test\light-modules
+
+mgnl create-light-module my-module
