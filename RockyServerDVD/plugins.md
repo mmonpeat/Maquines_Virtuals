@@ -28,35 +28,70 @@ Text Domain: maria-plugin
 
 defined( 'ABSPATH' ) or die( 'Hey, bitch' );
 
-
 class MariaPlugin
 {
+        public $public;
+
         function __construct() {
-                add_action( 'init', array( $this, 'custom_post_type' ) );
+                // Aquesta línia estableix la propietat "plugin" amb el nom base del plugin (és una funció de WordPress) que correspon a aquest arxiu.
+                $this->plugin = plugin_basename( __FILE__ );
+        }
+        function register() {
+                /* Afegeix una acció per a l'admin del WordPress per cridar la funció enqueue i add_admin_pages.
+                El primer argument especifica el "hook" (ganxo) al qual vols associar la funció que s'ha de cridar quan es produeix aquest ganxo.
+                ex:  utilitza el ganxo 'admin_enqueue_scripts', que s'activa quan s'està carregant la part d'administració (admin) de WordPress. Quan aquest ganxo es                         dispara, la funció $this->enqueue s'executarà.
+                */
+                add_action( 'admin_enqueue_scripts', array($this, 'enqueue') );
+                add_action( 'admin_menu', array( $this, 'add_admin_pages' ) );
+                // echo $this->plugin;
+                plugin_basename( __FILE__ );// Crida la funció "plugin_basename" per obtenir el nom base del plugin, però no fa res amb aquesta informació.
+                add_filter( "plugin_action_link_$this->plugin",array( $this, 'settings_link') );//afegeix un filtre per a les accions del plugin per cridar la funció                         "settings_link" d'aquesta classe.
+        }
+
+        public function settings_link( $links ) {
+                $settings_link = '<a href="admin.php?page=maria_plugin">Settings</a>';
+                array_push( $links, $settings_links );
+                return $links;
+        }
+        public function add_admin_pages() {
+                add_menu_page( 'Maria Plugin', 'Maria', 'manage_options', 'maria_plugin', array( $this, 'admin_index' ), 'dashicons-stordashicons-store', 110 );
+        }
+        public function admin_index() {
+                require_once plugin_dir_path( __FILE__ ) . 'templates/admin.php';
         }
         function activate() {
-                $this->custom_post_type();//crida un metode dins d'un altre metode
-                flush_rewrite_rules();
-                //encara que es desactivi el plugin el new titol que hagis creat es guardara
+                //flush_rewrite_rules();
+                require plugin_dir_path( __FILE__ ) . 'inc/plugin-activate.php';
+                PluginActivate::activate();
         }
-        function deactivation() {
-                flush_rewrite_rules();
-        }
-        function uninstall() {
-
-        }
-        function custom_post_type() {
-                register_post_type( 'llibte', ['public' => true, 'label' => 'PATATAAAAAAAA'] );
+        protected function create_post_type() {
+                add_action( 'init', array( $this, 'custom_post_type' ) );
         }
 
+        /*function custom_post_type() {
+                register_post_type( 'book', ['public' => true, 'label' => 'PATATAAAAAAAA'] );
+        }*/
+        function enqueue() {
+                wp_enqueue_style( 'mypluginstyle', plugins_url( '/aix/mystyle.css', __FILE__ ) );
+                wp_enqueue_script( 'mypluginscript', plugins_url( '/aix/myscript.js', __FILE__ ) );
+        }
 }
 
-if ( class_exists( 'MariaPlugin' ) ) {
-        $mariaplugin = new MariaPlugin();
-}
+$mariaplugin = new MariaPlugin();
+$mariaplugin->register();
+
 //fem els arrays per indicar a quin metode volem accedir i que faci el hook, $mariaplugin es la variable en la que es guarda la classe i pertant té els metodes
 register_activation_hook( __FILE__, array( $mariaplugin, 'activate' ) );
-register_deactivation_hook( __FILE__, array( $mariaplugin, 'deactivation' ) );
+
+require_once plugin_dir_path( __FILE__ ) . 'inc/plugin-deactivate.php';
+register_deactivation_hook( __FILE__, array( 'PluginDeactivate', 'deactivate' ) );
+
 
 ?>
 ´´´
+### function register():
+add_filter( "plugin_action_link_$this->plugin", array( $this, 'settings_link' ) );
+Aquest filtre està dissenyat per afegir o modificar els enllaços d'acció d'un plugin.
+- "plugin_action_link_$this->plugin" és el nom del ganxo de filtre al qual s'està afegint la funció. Aquesta és una cadena que sembla ser dinàmica i està basada en una propietat $this->plugin de la classe actual. El valor d'aquesta cadena serà específic del plugin o del context en el qual s'estigui utilitzant aquest codi.
+
+- "array( $this, 'settings_link' )" especifica la funció de filtratge que es cridarà quan s'activi aquest ganxo. $this fa referència a la instància actual de la classe, i 'settings_link' és el nom del mètode dins de la classe que s'executarà com a part del filtre. Aquest mètode pot modificar o afegir enllaços a les accions del plugin, com ara enllaços a pàgines de configuració o altres funcionalitats relacionades amb el plugin.
