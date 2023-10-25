@@ -28,7 +28,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA QUE ES LE COMUNITY EL QUESM NOSALTRES?? EL 
 Filters: 
 
   1. Type filter (comunity)
-  2. Tacs filter (només al de pagament)
+  2. Tacs filter (només al de pagament) (dx core)
   3. Last editor (comunity)
   4. Last Edited (comunity)
 
