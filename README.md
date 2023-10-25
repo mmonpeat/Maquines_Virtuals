@@ -64,3 +64,14 @@ PERMISOS USUARIS
 
 ![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/3896dbd8-48fd-41e4-9920-c14275f3fae1)
 
+BROWSEWR SUB-APP (2 parts)
+  1. WORKBENCH
+  2. ACTION BAR
+  3. DETAIL SUB-APP
+
+aqui la foto pisarra
+
+![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/31bf6e21-23da-45d2-8f2f-022b9339895c)
+
+detile sub-app
+![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/b273b12a-9681-4bd7-bdfb-0f40974a985c)
