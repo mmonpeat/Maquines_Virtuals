@@ -7,3 +7,6 @@ https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-usin
 ## Windows 10 amb magnolia
 
 Per iniciar magnolia: mgnl start
+
+entrar a la carpeta magnolia:
+  cd  C:\Users\root\Desktop\magnolia_test
