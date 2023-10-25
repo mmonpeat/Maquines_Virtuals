@@ -11,6 +11,10 @@ Per iniciar magnolia: mgnl start
 entrar a la carpeta magnolia:
   cd  C:\Users\root\Desktop\magnolia_test
 
+
+www.magnolia-cms.com
+
+
 APP LAUNCHER
 
 ![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/0bc3f321-4dd1-44c8-9395-0981582950fe)
