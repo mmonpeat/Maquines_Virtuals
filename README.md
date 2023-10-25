@@ -57,3 +57,10 @@ A assets podem veure les tres viwes.
   3. thums
 
 ![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/f89d10af-e82b-4db1-a029-84b680d9f133)
+
+
+
+PERMISOS USUARIS
+
+![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/3896dbd8-48fd-41e4-9920-c14275f3fae1)
+
