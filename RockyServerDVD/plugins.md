@@ -65,11 +65,13 @@ class MariaPlugin
                 require plugin_dir_path( __FILE__ ) . 'inc/plugin-activate.php';//es carregarà un fitxer específic quan es produeixi l'activació del plugin.
                 PluginActivate::activate(); //Crida a la funció "activate" de la classe "PluginActivate."
         }
+        /*
+        Ara no fa res :), es el plugn anterior
         protected function create_post_type() {
                 add_action( 'init', array( $this, 'custom_post_type' ) );//Afegeix una acció "init" per cridar la funció "custom_post_type" d'aquesta classe.
         }
 
-        /*function custom_post_type() {
+        function custom_post_type() {
                 register_post_type( 'book', ['public' => true, 'label' => 'PATATAAAAAAAA'] );
         }*/
         function enqueue() {
