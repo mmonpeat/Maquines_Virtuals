@@ -49,23 +49,24 @@ class MariaPlugin
         }
 
         public function settings_link( $links ) {
-                $settings_link = '<a href="admin.php?page=maria_plugin">Settings</a>';
-                array_push( $links, $settings_links );
+                $settings_link = '<a href="admin.php?page=maria_plugin">Settings</a>';//defineix un enllaç d'ajustos per al plugin.
+                array_push( $links, $settings_links );//afegeix l'enllaç als enllaços existents
                 return $links;
         }
         public function add_admin_pages() {
-                add_menu_page( 'Maria Plugin', 'Maria', 'manage_options', 'maria_plugin', array( $this, 'admin_index' ), 'dashicons-stordashicons-store', 110 );
+                add_menu_page( 'Maria Plugin', 'Maria', 'manage_options', 'maria_plugin', array( $this, 'admin_index' ), 'dashicons-stordashicons-store', 110 );//Afegeix una pàgina d'administració al menú de WordPress.
+    }
         }
         public function admin_index() {
-                require_once plugin_dir_path( __FILE__ ) . 'templates/admin.php';
+                require_once plugin_dir_path( __FILE__ ) . 'templates/admin.php';//inclou el fitxer d'administració.
         }
         function activate() {
                 //flush_rewrite_rules();
-                require plugin_dir_path( __FILE__ ) . 'inc/plugin-activate.php';
-                PluginActivate::activate();
+                require plugin_dir_path( __FILE__ ) . 'inc/plugin-activate.php';//es carregarà un fitxer específic quan es produeixi l'activació del plugin.
+                PluginActivate::activate(); //Crida a la funció "activate" de la classe "PluginActivate."
         }
         protected function create_post_type() {
-                add_action( 'init', array( $this, 'custom_post_type' ) );
+                add_action( 'init', array( $this, 'custom_post_type' ) );//Afegeix una acció "init" per cridar la funció "custom_post_type" d'aquesta classe.
         }
 
         /*function custom_post_type() {
@@ -77,8 +78,8 @@ class MariaPlugin
         }
 }
 
-$mariaplugin = new MariaPlugin();
-$mariaplugin->register();
+$mariaplugin = new MariaPlugin();//Instància de la classe MariaPlugin.
+$mariaplugin->register();// Crida a la funció "register" de la instància per configurar el plugin.
 
 //fem els arrays per indicar a quin metode volem accedir i que faci el hook, $mariaplugin es la variable en la que es guarda la classe i pertant té els metodes
 register_activation_hook( __FILE__, array( $mariaplugin, 'activate' ) );
