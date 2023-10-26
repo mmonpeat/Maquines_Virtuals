@@ -43,8 +43,6 @@ class MariaPlugin
                 */
                 add_action( 'admin_enqueue_scripts', array($this, 'enqueue') );
                 add_action( 'admin_menu', array( $this, 'add_admin_pages' ) );
-                // echo $this->plugin;
-                plugin_basename( __FILE__ );// Crida la funció "plugin_basename" per obtenir el nom base del plugin, però no fa res amb aquesta informació.
                 add_filter( "plugin_action_link_$this->plugin",array( $this, 'settings_link') );//afegeix un filtre per a les accions del plugin per cridar la funció                         "settings_link" d'aquesta classe.
         }
 
@@ -60,20 +58,6 @@ class MariaPlugin
         public function admin_index() {
                 require_once plugin_dir_path( __FILE__ ) . 'templates/admin.php';//inclou el fitxer d'administració.
         }
-        function activate() {
-                //flush_rewrite_rules();
-                require plugin_dir_path( __FILE__ ) . 'inc/plugin-activate.php';//es carregarà un fitxer específic quan es produeixi l'activació del plugin.
-                PluginActivate::activate(); //Crida a la funció "activate" de la classe "PluginActivate."
-        }
-        /*
-        Ara no fa res :), es el plugn anterior
-        protected function create_post_type() {
-                add_action( 'init', array( $this, 'custom_post_type' ) );//Afegeix una acció "init" per cridar la funció "custom_post_type" d'aquesta classe.
-        }
-
-        function custom_post_type() {
-                register_post_type( 'book', ['public' => true, 'label' => 'PATATAAAAAAAA'] );
-        }*/
         function enqueue() {
                 wp_enqueue_style( 'mypluginstyle', plugins_url( '/aix/mystyle.css', __FILE__ ) );
                 wp_enqueue_script( 'mypluginscript', plugins_url( '/aix/myscript.js', __FILE__ ) );
@@ -82,14 +66,7 @@ class MariaPlugin
 
 $mariaplugin = new MariaPlugin();//Instància de la classe MariaPlugin.
 $mariaplugin->register();// Crida a la funció "register" de la instància per configurar el plugin.
-
-//fem els arrays per indicar a quin metode volem accedir i que faci el hook, $mariaplugin es la variable en la que es guarda la classe i pertant té els metodes
-register_activation_hook( __FILE__, array( $mariaplugin, 'activate' ) );
-
-require_once plugin_dir_path( __FILE__ ) . 'inc/plugin-deactivate.php';
-register_deactivation_hook( __FILE__, array( 'PluginDeactivate', 'deactivate' ) );
-
-
+//s'activa i desactiva sol :)
 ?>
 ´´´
 ### function register():
