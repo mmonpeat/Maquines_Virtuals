@@ -66,7 +66,7 @@ class MariaPlugin
 
 $mariaplugin = new MariaPlugin();//Instància de la classe MariaPlugin.
 $mariaplugin->register();// Crida a la funció "register" de la instància per configurar el plugin.
-//s'activa i desactiva sol :)
+//s'activa i desactiva per defecte
 ?>
 ´´´
 ### function register():
