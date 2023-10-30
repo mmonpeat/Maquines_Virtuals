@@ -48,7 +48,7 @@ class MariaPlugin
 
         public function settings_link( $links ) {
                 $settings_link = '<a href="admin.php?page=maria_plugin">Settings</a>';//defineix un enllaç d'ajustos per al plugin.
-                array_push( $links, $settings_links );//afegeix l'enllaç als enllaços existents
+                array_push( $links, $settings_link );//afegeix l'enllaç als enllaços existents
                 return $links;
         }
         public function add_admin_pages() {
