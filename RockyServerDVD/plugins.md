@@ -75,3 +75,66 @@ Aquest filtre està dissenyat per afegir o modificar els enllaços d'acció d'un
 - "plugin_action_link_$this->plugin" és el nom del ganxo de filtre al qual s'està afegint la funció. Aquesta és una cadena que sembla ser dinàmica i està basada en una propietat $this->plugin de la classe actual. El valor d'aquesta cadena serà específic del plugin o del context en el qual s'estigui utilitzant aquest codi.
 
 - "array( $this, 'settings_link' )" especifica la funció de filtratge que es cridarà quan s'activi aquest ganxo. $this fa referència a la instància actual de la classe, i 'settings_link' és el nom del mètode dins de la classe que s'executarà com a part del filtre. Aquest mètode pot modificar o afegir enllaços a les accions del plugin, com ara enllaços a pàgines de configuració o altres funcionalitats relacionades amb el plugin.
+
+´´´
+aix/mystyle.css
+
+.hola {
+        text-align: center;
+}
+table, tr, td, th {
+        border: 1px solid black;
+        border-collapse: collapse;
+}
+td, th {
+        padding: 5px 10px;
+        min-width: 30px;
+        text-align: center;
+}
+table {
+        margin: auto;
+}
+´´´
+
+´´´
+templates/admin.php
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "123456789";
+$dbname = "wp";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM wp_wc_orders";
+$result = $conn->query($sql);
+?>
+
+<table>
+<thead>
+<tr>
+        <th>ID</th>
+        <th>Status</th>
+        <th>Currency</th>
+        <th>Product</th>
+</tr>
+</thead>
+</tbody>
+<?php
+while($row = $result->fetch_assoc()) {
+        $id = $row["id"];
+        $itemname = $conn->query("SELECT order_item_name AS itemname FROM wp_woocommerce_order_items WHERE order_id = $id")->fetch_assoc()["itemname"];
+        echo '<tr><td>'. $id .'</td><td>'. $row["status"] .'</td><td>'. $row["currency"] ."</td><td>$itemname</td></tr>";
+}
+$conn->close();
+?>
+</tbody>
+</table>
+<p class="hola">holiwisssssssssssss</p>
+´´´
