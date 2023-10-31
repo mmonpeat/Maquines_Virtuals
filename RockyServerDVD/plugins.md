@@ -9,7 +9,7 @@ https://www.golinuxcloud.com/install-phpmyadmin-rocky-linux-9/
 maria.php
 *********
 
-```
+```php
 <?php
 
 /**
@@ -69,6 +69,8 @@ $mariaplugin->register();// Crida a la funció "register" de la instància per c
 //s'activa i desactiva per defecte
 ?>
 ´´´
+
+
 ### function register():
 add_filter( "plugin_action_link_$this->plugin", array( $this, 'settings_link' ) );
 Aquest filtre està dissenyat per afegir o modificar els enllaços d'acció d'un plugin.
@@ -76,7 +78,8 @@ Aquest filtre està dissenyat per afegir o modificar els enllaços d'acció d'un
 
 - "array( $this, 'settings_link' )" especifica la funció de filtratge que es cridarà quan s'activi aquest ganxo. $this fa referència a la instància actual de la classe, i 'settings_link' és el nom del mètode dins de la classe que s'executarà com a part del filtre. Aquest mètode pot modificar o afegir enllaços a les accions del plugin, com ara enllaços a pàgines de configuració o altres funcionalitats relacionades amb el plugin.
 
-´´´
+
+´´´css
 aix/mystyle.css
 
 .hola {
@@ -95,8 +98,9 @@ table {
         margin: auto;
 }
 ´´´
+holssa
 
-´´´
+´´´php
 templates/admin.php
 
 <?php
@@ -138,3 +142,4 @@ $conn->close();
 </table>
 <p class="hola">holiwisssssssssssss</p>
 ´´´
+aaaaa
