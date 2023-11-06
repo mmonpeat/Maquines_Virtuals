@@ -122,28 +122,23 @@ $result = $conn->query($sql);//fem la consulta a la bbdd
 
 //Estructura de la taula 
 <div class="table-wrapper">
-<table>
+<table id="tablee id="tablee"">
 <thead>
 <tr>
         <th>ID</th>
         <th>Status</th>
         <th>Currency</th>
         <th>Product</th>
+        <th>Total</th>
 </tr>
 </thead>
 </tbody>
-
-
 <?php
-//recorrem totes les files de la taula
-/* La funció "fetch_assoc()" s'utilitza per obtenir cada fila com un array associatiu, on els noms de les columnes són les claus de l'array.*/
-
-while($row = $result->fetch_assoc())
-{
+while($row = $result->fetch_assoc()) {
         $id = $row["id"];
-        //consulta a la bbdd i s'emmagatzema a la variable "$itemname" 
-        $itemname = $conn->query("SELECT order_item_name AS itemname FROM wp_woocommerce_order_items WHERE order_id = $id")->fetch_assoc()["itemname"];
-        echo '<tr><td>'. $id .'</td><td>'. $row["status"] .'</td><td>'. $row["currency"] ."</td><td>$itemname</td></tr>";
+        $itemresult = $conn->query("SELECT order_item_name AS itemname FROM wp_woocommerce_order_items WHERE order_id = $id")->fetch_assoc();
+        $itemname = $itemresult !== null ? $itemresult["itemname"] : 'NO SE';
+        echo '<tr><td>'. $id .'</td><td>'. $row["status"] .'</td><td>'. $row["currency"] ."</td><td>$itemname</td><td>" . $row["total_amount"] . '</td></tr>';
 }
 $conn->close();
 ?>
