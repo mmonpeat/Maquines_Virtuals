@@ -103,22 +103,25 @@ table {
 templates/admin.php
 
 <?php
+//dades per la bbdd
 $servername = "localhost";
 $username = "root";
 $password = "123456789";
 $dbname = "wp";
 
-// Create connection
+//creem la conexió
 $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
+// Check conexió
 if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM wp_wc_orders";
-$result = $conn->query($sql);
+$sql = "SELECT * FROM wp_wc_orders";//selecionem la taula d'on treurem algunes dades
+$result = $conn->query($sql);//fem la consulta a la bbdd
 ?>
 
+//Estructura de la taula 
+<div class="table-wrapper">
 <table>
 <thead>
 <tr>
@@ -129,9 +132,16 @@ $result = $conn->query($sql);
 </tr>
 </thead>
 </tbody>
+
+
 <?php
-while($row = $result->fetch_assoc()) {
+//recorrem totes les files de la taula
+/* La funció "fetch_assoc()" s'utilitza per obtenir cada fila com un array associatiu, on els noms de les columnes són les claus de l'array.*/
+
+while($row = $result->fetch_assoc())
+{
         $id = $row["id"];
+        //consulta a la bbdd i s'emmagatzema a la variable "$itemname" 
         $itemname = $conn->query("SELECT order_item_name AS itemname FROM wp_woocommerce_order_items WHERE order_id = $id")->fetch_assoc()["itemname"];
         echo '<tr><td>'. $id .'</td><td>'. $row["status"] .'</td><td>'. $row["currency"] ."</td><td>$itemname</td></tr>";
 }
@@ -139,5 +149,5 @@ $conn->close();
 ?>
 </tbody>
 </table>
-<p class="hola">holiwisssssssssssss</p>
+</div>
 ```
