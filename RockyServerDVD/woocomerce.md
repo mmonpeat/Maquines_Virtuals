@@ -8,3 +8,91 @@ Vas a extensions
 Per canviar el tema de la web 
 
 ![temes](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/c9d3c0c7-6a31-4504-8199-c9c488413dc6)
+
+
+```css
+admin/css/mystyle.css
+
+table, tr, td, th {
+        border: 1px solid black;
+        border-collapse: collapse;
+}
+td, th {
+        padding: 5px 10px;
+        min-width: 30px;
+        text-align: center;
+}
+table {
+        margin: auto;
+}
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+          bottom: .5em;
+  }
+
+```
+
+```
+admin/js/myscript.js
+
+$(document).ready(function () {
+          $('#tablee').DataTable();
+          $('.dataTables_length').addClass('bs-select');
+});
+```
+
+```php
+templates/admin.php
+
+<?php
+//dades per la bbdd
+$servername = "localhost";
+$username = "root";
+$password = "123456789";
+$dbname = "wp";
+
+//creem la conexió
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check conexió
+if ($conn->connect_error) {
+die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM wp_wc_orders";//selecionem la taula d'on treurem algunes dades
+$result = $conn->query($sql);//fem la consulta a la bbdd
+?>
+
+//Estructura de la taula 
+<div class="table-wrapper">
+<table id="tablee id="tablee"">
+<thead>
+<tr>
+        <th>ID</th>
+        <th>Status</th>
+        <th>Currency</th>
+        <th>Product</th>
+        <th>Total</th>
+</tr>
+</thead>
+</tbody>
+<?php
+while($row = $result->fetch_assoc()) {
+        $id = $row["id"];
+        $itemresult = $conn->query("SELECT order_item_name AS itemname FROM wp_woocommerce_order_items WHERE order_id = $id")->fetch_assoc();
+        $itemname = $itemresult !== null ? $itemresult["itemname"] : 'NO SE';
+        echo '<tr><td>'. $id .'</td><td>'. $row["status"] .'</td><td>'. $row["currency"] ."</td><td>$itemname</td><td>" . $row["total_amount"] . '</td></tr>';
+}
+$conn->close();
+?>
+</tbody>
+</table>
+</div>
+```
