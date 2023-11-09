@@ -51,29 +51,28 @@ $(document).ready(function () {
 ```php
 
 <?php
-//dades per la bbdd
 $servername = "localhost";
 $username = "root";
 $password = "123456789";
 $dbname = "wp";
 
-//creem la conexió
+// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-// Check conexió
+// Check connection
 if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM wp_wc_orders";//selecionem la taula d'on treurem algunes dades
-$result = $conn->query($sql);//fem la consulta a la bbdd
+$sql = "SELECT * FROM wp_wc_orders";
+$result = $conn->query($sql);
 ?>
 
-//Estructura de la taula 
 <div class="table-wrapper">
-<table id="tablee id="tablee"">
+<table id="tablee" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
 <thead>
 <tr>
         <th>ID</th>
+        <th>Date</th>
         <th>Status</th>
         <th>Currency</th>
         <th>Product</th>
@@ -84,9 +83,11 @@ $result = $conn->query($sql);//fem la consulta a la bbdd
 <?php
 while($row = $result->fetch_assoc()) {
         $id = $row["id"];
-        $itemresult = $conn->query("SELECT order_item_name AS itemname FROM wp_woocommerce_order_items WHERE order_id = $id")->fetch_assoc();
+        $itemresult = $conn->query("SELECT order_item_name AS itemname FROM wp_woocommerce_order_items WHERE order_id = $id")->fetch_assoc();//Agafa info de la bbdd i la guarda en una variable en un array asosiatiu
         $itemname = $itemresult !== null ? $itemresult["itemname"] : 'NO SE';
-        echo '<tr><td>'. $id .'</td><td>'. $row["status"] .'</td><td>'. $row["currency"] ."</td><td>$itemname</td><td>" . $row["total_amount"] . '</td></tr>';
+        $dateres = $conn->query("SELECT date_created AS date FROM wp_wc_order_stats WHERE order_id = $id")->fetch_assoc();
+        $date = $dateres !== null ? $dateres["date"] : 'casi';
+        echo '<tr><td>'. $id . '</td><td>'. $date . '</td><td>'. $row["status"] .'</td><td>'. $row["currency"] ."</td><td>$itemname</td><td>" . $row["total_amount"] . '</td></tr>';
 }
 $conn->close();
 ?>
