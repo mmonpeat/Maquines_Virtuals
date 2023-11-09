@@ -9,9 +9,8 @@ Per canviar el tema de la web
 
 ![temes](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/c9d3c0c7-6a31-4504-8199-c9c488413dc6)
 
-
+## admin/css/mystyle.css
 ```css
-admin/css/mystyle.css
 
 table, tr, td, th {
         border: 1px solid black;
@@ -40,17 +39,16 @@ table.dataTable thead .sorting_desc_disabled:before {
 
 ```
 
+## admin/js/myscript.js
 ```
-admin/js/myscript.js
-
 $(document).ready(function () {
           $('#tablee').DataTable();
           $('.dataTables_length').addClass('bs-select');
 });
 ```
 
+## templates/admin.php
 ```php
-templates/admin.php
 
 <?php
 //dades per la bbdd
