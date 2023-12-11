@@ -1,6 +1,14 @@
 ## Link de com installar RockyServerDVD
 
 https://www.youtube.com/watch?v=sG-WNFR8z90
+
+![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/f55cce48-91db-48bc-a65d-d1e5c9e13c66)
+![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/37c651a3-2a68-49af-92b5-ba4fe2970737)
+![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/2f060cb9-45b6-475f-8660-4ae1460aa81f)
+![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/5538370c-dd74-4a45-8d5b-955d6c9ea6ba)
+![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/501eaa41-4e4b-4011-85c0-208e62b0e8dd)
+
+
 ![pro-LwmxAcmB](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/3c321bdc-2350-4851-a9ab-bcb5d49e6642)
 ![20231003_185007](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/7e54b701-99df-4b12-9e67-6031bdbc174d)
 
