@@ -7,9 +7,9 @@ https://www.youtube.com/watch?v=sG-WNFR8z90
 ![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/2f060cb9-45b6-475f-8660-4ae1460aa81f)
 ![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/5538370c-dd74-4a45-8d5b-955d6c9ea6ba)
 ![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/501eaa41-4e4b-4011-85c0-208e62b0e8dd)
+![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/95e507e3-8dc0-43b9-88e4-6daa88c2dff2)
+![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/73fe5ebe-c9eb-4cdf-8ca0-47f8dfce3f1a)
 
-
-![pro-LwmxAcmB](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/3c321bdc-2350-4851-a9ab-bcb5d49e6642)
 ![20231003_185007](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/7e54b701-99df-4b12-9e67-6031bdbc174d)
 
 
