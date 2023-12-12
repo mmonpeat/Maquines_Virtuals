@@ -45,6 +45,7 @@ usermod -aG wheel maria (posem maria en el grup wheel)
 Pasar de usuario normal a root:
 *******************************
 [maria@localhost ~]$ su -
+
 Contraseña:
 [maria@localhost ~]#
 
@@ -74,6 +75,7 @@ ponemos el SELINUX=disabled
 guardamos el fichero y reiniciamos la máquina.
 Podemos ver el estado al reiniciar con:
 [root@localhost ~]# sestatus
+
 SELinux status:                 disabled
 [root@localhost ~]#
 
@@ -259,40 +261,61 @@ pass: (elquetuquieras)
 WORDPRESS TEST SQUIDFY
 **********************
 mysql -u root -p
+
 mysql> CREATE DATABASE wpsquidfy CHARACTER SET utf8 COLLATE utf8_bin;
+
 mysql> CREATE USER 'maria'@'localhost' IDENTIFIED BY '123456789';
+
 mysql> GRANT ALL privileges on wpsquidfy.* to maria@localhost;
 
+
 mysql-name: wpsquidfy
+
 mysql-user: maria
+
 mysql-pass: 123456789
 
 
 WORDPRESS TEST 2
 ****************
 mysql -u root -p
+
 mysql> CREATE DATABASE wptest2 CHARACTER SET utf8 COLLATE utf8_bin;
+
 mysql> GRANT ALL privileges on wptest2.* to wpuser@localhost;
 
 
 INSTALL WORDPRESS
 *****************
 mysql -u root -p
+
 mysql> CREATE DATABASE wp;
+
 mysql> CREATE USER 'wpuser'@'localhost' IDENTIFIED BY '123456789';
+
 mysql> GRANT ALL ON wp.* TO 'wpuser'@'localhost';
+
 mysql> FLUSH PRIVILEGES;
+
 mysql> EXIT;
 
 
+
 $ wget https://wordpress.org/latest.tar.gz -O wordpress.tar.gz
+
 $ tar -xvf wordpress.tar.gz
+
 $ sudo cp -R wordpress /var/www/html/
 
+
 $ sudo chown -R apache:apache /var/www/html/wordpress
+
 $ sudo chmod -R 775 /var/www/html/wordpress
+
 $ sudo semanage fcontext -a -t httpd_sys_rw_content_t "/var/www/html/wordpress(/.*)?"
+
 $ sudo restorecon -Rv /var/www/html/wordpress
+
 
 crear fitxer
 ************
@@ -301,28 +324,43 @@ $ sudo vim /etc/httpd/conf.d/wordpress.conf
 Enganxem:
 
 <VirtualHost *:80>
-ServerName localhost
-ServerAdmin root@localhost
-DocumentRoot /var/www/html/wordpress
+    
+    ServerName localhost
+    
+    ServerAdmin root@localhost
+    
+    DocumentRoot /var/www/html/wordpress
 
-<Directory "/var/www/html/wordpress">
-Options Indexes FollowSymLinks
-AllowOverride all
-Require all granted
-</Directory>
 
-ErrorLog /var/log/httpd/wordpress_error.log
-CustomLog /var/log/httpd/wordpress_access.log common
+    <Directory "/var/www/html/wordpress">
+
+        Options Indexes FollowSymLinks
+        
+        AllowOverride all
+        
+        Require all granted
+
+    </Directory>
+
+    ErrorLog /var/log/httpd/wordpress_error.log
+    
+    CustomLog /var/log/httpd/wordpress_access.log common
+    
 </VirtualHost>
 
 $ sudo systemctl restart httpd
+
 $ sudo systemctl status httpd
+
 
 allow HTTP and HTTPS:
 
 $ sudo firewall-cmd --permanent --zone=public --add-service=http 
+
 $ sudo firewall-cmd --permanent --zone=public --add-service=https
+
 $ sudo firewall-cmd --reload
+
 
 Set Up WordPress from a Browser
 *******************************
