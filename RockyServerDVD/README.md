@@ -18,6 +18,12 @@ Server:
 ![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/73fe5ebe-c9eb-4cdf-8ca0-47f8dfce3f1a)
 ![20231003_185007](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/7e54b701-99df-4b12-9e67-6031bdbc174d)
 
+## Que root pugui fer login remote
+
+![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/77b01b96-1ae5-47d2-a991-42bfa2b4103c)
+
+![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/fbf4f98b-916e-424e-98c5-b7cd957004b3)
+
 
 ## Configurar Rocky per installar WordPress
 
