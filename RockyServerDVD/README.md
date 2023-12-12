@@ -6,9 +6,11 @@ https://www.youtube.com/watch?v=sG-WNFR8z90
 ![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/37c651a3-2a68-49af-92b5-ba4fe2970737)
 ![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/2f060cb9-45b6-475f-8660-4ae1460aa81f)
 ![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/5538370c-dd74-4a45-8d5b-955d6c9ea6ba)
+
+No importa la primera o la segona.
+
 ![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/501eaa41-4e4b-4011-85c0-208e62b0e8dd)
 
-![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/d64f7e5c-11ad-45e3-b130-a62f25370244)
 
 Server amb entorn gràfic:
 ![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/95e507e3-8dc0-43b9-88e4-6daa88c2dff2)
@@ -18,6 +20,7 @@ Server:
 
 
 ![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/73fe5ebe-c9eb-4cdf-8ca0-47f8dfce3f1a)
+![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/d64f7e5c-11ad-45e3-b130-a62f25370244)
 ![20231003_185007](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/7e54b701-99df-4b12-9e67-6031bdbc174d)
 
 ## Que root pugui fer login remote
