@@ -8,6 +8,8 @@ https://www.youtube.com/watch?v=sG-WNFR8z90
 ![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/5538370c-dd74-4a45-8d5b-955d6c9ea6ba)
 ![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/501eaa41-4e4b-4011-85c0-208e62b0e8dd)
 
+![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/d64f7e5c-11ad-45e3-b130-a62f25370244)
+
 Server amb entorn gràfic:
 ![imatge](https://github.com/mmonpeat/Maquines_Virtuals/assets/115364869/95e507e3-8dc0-43b9-88e4-6daa88c2dff2)
 
