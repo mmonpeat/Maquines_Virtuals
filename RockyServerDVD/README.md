@@ -71,19 +71,26 @@ Desactivar el SELINUX:
 **********************
 vi /etc/sysconfig/selinux
 
-ponemos el SELINUX=disabled
-guardamos el fichero y reiniciamos la máquina.
+
+Posem el SELINUX=disabled
+
+Guardamos el fichero y reiniciamos la máquina.
+
 Podemos ver el estado al reiniciar con:
+
 [root@localhost ~]# sestatus
 
 SELinux status:                 disabled
+
 [root@localhost ~]#
 
 
 Lo primero un update system:
+
 $ sudo yum update
 
 Updating the system
+
 # sudo dnf -y update
 
 
@@ -108,29 +115,44 @@ Install Apache server.
 [root@localhost ~]# yum -y install httpd
 
 Add to start:
+
 [root@localhost ~]# systemctl enable httpd
 
 [root@localhost ~]# yum install mod_ssl
 
 systemctl start httpd
+
 systemctl stop httpd
+
 systemctl restart httpd
+
 systemctl status httpd
 
 
 Start FIREWALL
 **************
+
 [root@rockylinux9-vm-tonet ~]# systemctl start firewalld
 
 
 Open firewall port:
 -------------------
+
 [root@localhost ~]# sudo firewall-cmd --permanent --add-port="80"/tcp
+
 success
+
+
 [root@localhost ~]# sudo firewall-cmd --permanent --add-port="443"/tcp
+
 success
+
+
 [root@localhost ~]# sudo firewall-cmd --reload
+
 success
+
+
 [root@localhost ~]#
 
 
@@ -142,26 +164,37 @@ Instalación del MySQL
 
 
 Enable and Start MySQL
+
 [root@rockylinux9-vm-tonet ~]# sudo systemctl enable mysqld
+
 Created symlink /etc/systemd/system/multi-user.target.wants/mysqld.service → /usr/lib/systemd/system/mysqld.service.
 
 systemctl start mysqld
+
 systemctl stop mysqld
+
 systemctl restart mysqld
+
 systemctl status mysqld
 
+
 Secure MySQL in Rocky Linux
-[root@rockylinux9-vm-tonet ~]# sudo mysql_secure_installation
+
+[root@rockylinux9-vm-tonet ~]# sudo mysql_secure_installation (dir que no a tot)
 
 root
 (el que tu quieras)
 
 Connect to MySQL in Rocky Linux
+
 [root@rockylinux9-vm-tonet ~]# sudo mysql -u root -p
 
 Enter password:
+
 Welcome to the MySQL monitor.  Commands end with ; or \g.
+
 Your MySQL connection id is 10
+
 Server version: 8.0.26 Source distribution
 
 Copyright (c) 2000, 2021, Oracle and/or its affiliates.
@@ -186,12 +219,18 @@ mysql>
 Install PHP 7.4 on on Rocky Linux
 ---------------------------------
 Check PHP Installation in Rocky Linux
+
 [root@localhost html]# cd /var/www/html/
+
 [root@localhost html]# chown apache:apache wp-fimba/ -R
+
 [root@localhost html]# php -v
+
 bash: php: no se encontró la orden...
 
+
 Thankfully, Rocky Linux AppStream repositories provide PHP versions from PHP 7.2 which is enabled by default. To get a list of all the hosted PHP modules, run the command.
+
 sudo dnf module list php
 
 To install PHP 7.4, first enable the module as provided.
