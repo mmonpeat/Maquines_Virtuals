@@ -198,6 +198,8 @@ root
 
 Connect to MySQL in Rocky Linux
 
+[root@localhost ~]# mysqladmin -u root -p version
+
 [root@rockylinux9-vm-tonet ~]# sudo mysql -u root -p
 
 Enter password:
