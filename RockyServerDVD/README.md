@@ -404,6 +404,10 @@ $ sudo systemctl restart httpd
 
 $ sudo systemctl status httpd
 
+WORDPRES MULTISITE
+
+https://wordpress.org/documentation/article/create-a-network/
+
 
 allow HTTP and HTTPS:
 
