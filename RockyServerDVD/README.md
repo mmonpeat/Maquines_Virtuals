@@ -167,7 +167,7 @@ success
 [root@localhost ~]#
 
 
-Instalación del MySQL
+## Instalación del MySQL
 *********************
 
 [root@rockylinux9-vm-tonet ~]# sudo dnf install mysql-server
@@ -191,7 +191,7 @@ systemctl status mysqld
 
 Secure MySQL in Rocky Linux
 
-[root@rockylinux9-vm-tonet ~]# sudo mysql_secure_installation (dir que no a tot)
+[root@rockylinux9-vm-tonet ~]# sudo mysql_secure_installation (dir que no a tot exepte: Remove test database and access to it? (Press y|Y for Yes, any other key for No) : y)
 
 root
 (el que tu quieras)
