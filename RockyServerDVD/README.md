@@ -249,6 +249,7 @@ sudo dnf module list php
 To install PHP 7.4, first enable the module as provided.
 
 [root@rockylinux9-vm-tonet ~]# sudo dnf module list php
+```
 Last metadata expiration check: 0:01:34 ago on Thu May 25 14:06:06 2023.
 Rocky Linux 9 - AppStream
 Name                     Stream                       Profiles                                       Summary
@@ -263,52 +264,65 @@ php                      remi-8.2                     common [d], devel, minimal
 
 Hint: [d]efault, [e]nabled, [x]disabled, [i]nstalled
 [root@rockylinux9-vm-tonet ~]# == [root@localhost ~]#
-
+```
 Activamos la versión 7.4:
+
 [root@rockylinux9-vm-tonet ~]# sudo dnf module enable php:remi-7.4 -y
 
 
 Una vez activado la versión 7.4, podemos listar de nuevo y lo verificamos.
 
 Iniciar la instalación del PHP 7.4:
+
 [root@rockylinux9-vm-tonet ~]# sudo dnf install php php-cli php-gd php-curl php-zip php-mbstring
 
 Install other commonly required PHP extensions, php-mysqlnd creates a connection to the database server.
+
 [root@rockylinux9-vm-tonet ~]# dnf install php-mysqlnd php-gd php-intl
 
 Ver la versión instalada:
+
 [root@rockylinux9-vm-tonet ~]# php -v
+```
 PHP 7.4.33 (cli) (built: May 11 2023 10:38:29) ( NTS )
 Copyright (c) The PHP Group
 Zend Engine v3.4.0, Copyright (c) Zend Technologies
     with Zend OPcache v7.4.33, Copyright (c), by Zend Technologies
+```
+
 [root@rockylinux9-vm-tonet ~]#
 
-
 Allow execution of files by httpd in the /var/www/html/ directory with an SE Linux policy exception.
+
 # chcon -R -t httpd_sys_content_t /var/www/html/
 
 
 Install Certbot in Rocky Linux
 ******************************
-[root@rockylinux9-vm-tonet ~]# sudo dnf install certbot python3-certbot-apache
 
+[root@rockylinux9-vm-tonet ~]# sudo dnf install certbot python3-certbot-apache
 
 
 WORDPRESS TEST xxx
 ********************
+
 mysql -u root -p
+
 mysql> CREATE DATABASE wptest CHARACTER SET utf8 COLLATE utf8_bin;
+
 mysql> CREATE USER 'wpuser'@'localhost' IDENTIFIED BY 'elquetuquieras';
+
 mysql> GRANT ALL privileges on wptest.* to wpuser@localhost;
 
-* Importar la BB.DD.:
-mysql -u wpuser -p wptest < fimba.sql (pass: elquetuquieras
 
+* Importar la BB.DD.:
+
+mysql -u wpuser -p wptest < fimba.sql (pass: elquetuquieras)
+```
 url admin: http://wptest.bylapera.com/wp-admin/
 user: administrador
 pass: (elquetuquieras)
-
+```
 
 WORDPRESS TEST SQUIDFY
 **********************
